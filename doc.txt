@@ -1,0 +1,23 @@
+sign up form:
+1- name
+2- email
+3- mobile 
+4- password
+5- picture
+
+
+
+Select plan page
+3 plans
+1- silver
+2- gold
+3- diamond
+
+after selection of plan show him 2 more inputs
+in the notification show our jazz cash number.
+1- for TID number
+2- mobile number (amount paid)
+
+
+account will go to verify state and verification by admin account holder can access his account and utilize all other features 
+of our site.
