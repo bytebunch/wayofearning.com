@@ -27,9 +27,22 @@ include_once("inc/functions.php");
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
+        <?php if(is_user_logged_in()){          
+          ?>
+          <li class="nav-item">
+            <a class="nav-link" href="dashboard.php">Hi, <?php echo $_SESSION['user']['name']; ?></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="logout.php">Logout</a>
+          </li>
+        <?php }else{ ?>
         <li class="nav-item">
           <a class="nav-link" href="signup.php">Sign up</a>
-        </li>        
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="login.php">Login</a>
+        </li>
+        <?php } ?>  
       </ul>
     </div>
   </div>
