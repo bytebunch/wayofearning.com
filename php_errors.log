@@ -1,0 +1,2 @@
+[17-Aug-2021 17:13:51 UTC] PHP Notice:  Undefined index: plan in D:\www\htdocs\wayofearning.com\inc\functions.php on line 58
+[17-Aug-2021 18:10:29 UTC] PHP Notice:  Array to string conversion in D:\www\htdocs\wayofearning.com\dashboard.php on line 55

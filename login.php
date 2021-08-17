@@ -14,6 +14,8 @@ if(isset($_POST['user_email']) && isset($_POST['user_password'])){
       'name' => $result['full_name'], 
       'email' => $result['email'],
       'mobile' => $result['phone'],
+      'plan' => $result['plan'],
+      'verify' => $result['verify'],
     );
     header("Location: dashboard.php");exit();
   }else{

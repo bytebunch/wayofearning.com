@@ -26,6 +26,8 @@ if(isset($_POST['full_name'])){
         'name' => $full_name, 
         'email' => $user_email,
         'mobile' => $user_mobile,
+        'plan' => null,
+        'verify' => 0,
       );
       header("Location: dashboard.php");exit();
     }
