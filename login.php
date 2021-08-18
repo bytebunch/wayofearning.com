@@ -16,6 +16,7 @@ if(isset($_POST['user_email']) && isset($_POST['user_password'])){
       'mobile' => $result['phone'],
       'plan' => $result['plan'],
       'verify' => $result['verify'],
+      'referral_code' => $result['referral_code'],
     );
     header("Location: dashboard.php");exit();
   }else{

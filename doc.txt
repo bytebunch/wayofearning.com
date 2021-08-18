@@ -21,3 +21,8 @@ in the notification show our jazz cash number.
 
 account will go to verify state and verification by admin account holder can access his account and utilize all other features 
 of our site.
+
+
+https://developers.google.com/youtube/iframe_api_reference
+https://stackoverflow.com/questions/22260505/track-youtube-video-playback-with-jquery-and-google-analytics-events
+https://stackoverflow.com/questions/25020339/how-to-track-how-much-of-a-youtube-video-the-user-has-watched

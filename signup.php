@@ -14,20 +14,31 @@ if(isset($_POST['full_name'])){
   if($result->num_rows){
     $user_message = 'This email already exist.';
   }else{
-    $query = "INSERT INTO users (full_name, email, password, phone, type)
-    VALUES ('{$full_name}', '{$user_email}', '{$user_password}', '{$user_mobile}', 2) ";
+    $referral_code = generate_random_int(12);
+    $query = "INSERT INTO users (full_name, email, password, phone, type, referral_code)
+    VALUES ('{$full_name}', '{$user_email}', '{$user_password}', '{$user_mobile}', 2, '{$referral_code}') ";
     
     $created = $conn->query($query);
     
     if($created){
+      $new_user_id = $conn->insert_id;
+      if(isset($_POST['referral_code'])){
+        if($parent_user_id = get_user_id_by_code($_POST['referral_code'])){
+          $query = "INSERT INTO referrals (parent_user_id, user_id)
+          VALUES ({$parent_user_id}, {$new_user_id}) ";
+          $created = $conn->query($query);
+        }
+      }
+
       $_SESSION['user'] = array(
-        'ID' => $conn->insert_id, 
+        'ID' => $new_user_id, 
         'type' => 2, 
         'name' => $full_name, 
         'email' => $user_email,
         'mobile' => $user_mobile,
         'plan' => null,
         'verify' => 0,
+        'referral_code' => $referral_code,
       );
       header("Location: dashboard.php");exit();
     }
@@ -40,6 +51,7 @@ include_once("header.php");
 <div class="container">
   <?php if(isset($user_message)){ echo '<h3>This email already exist.</h3>'; } ?>
   <form method="post" action="">
+    <input type="hidden" name="referral_code" value="<?php if(isset($_GET['referral_code'])) echo $_GET['referral_code']; ?>">
     <div class="mb-3">
       <label for="full_name" class="form-label">Full Name</label>
       <input type="text" class="form-control" id="full_name" name="full_name" required="required">

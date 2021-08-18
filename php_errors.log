@@ -1,2 +1,4 @@
 [17-Aug-2021 17:13:51 UTC] PHP Notice:  Undefined index: plan in D:\www\htdocs\wayofearning.com\inc\functions.php on line 58
 [17-Aug-2021 18:10:29 UTC] PHP Notice:  Array to string conversion in D:\www\htdocs\wayofearning.com\dashboard.php on line 55
+[18-Aug-2021 13:17:32 UTC] PHP Notice:  Undefined index: referral_code in D:\www\htdocs\wayofearning.com\dashboard.php on line 69
+[18-Aug-2021 13:35:36 UTC] PHP Notice:  Undefined index: referral_code in D:\www\htdocs\wayofearning.com\signup.php on line 54
