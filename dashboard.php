@@ -106,45 +106,16 @@ include_once("header.php");
 
           <?php 
             $videos = array(
-              '<iframe width="560" height="315" src="https://www.youtube.com/embed/jSFzbISXLLs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" enablejsapi="1" allowfullscreen></iframe>',
-              '<iframe width="560" height="315" src="https://www.youtube.com/embed/pBSIUuwpijA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" enablejsapi="1" allowfullscreen></iframe>',
+              'jSFzbISXLLs',
+              'pBSIUuwpijA',
             );
 
-            foreach($videos as $video){
-              echo '<div>'.$video.'</div>';
-            }
+            /*foreach($videos as $video){
+              
+              //echo '<div class="mt-3"><iframe width="560" height="315" src="https://www.youtube.com/embed/'.$video.'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" enablejsapi="1" allowfullscreen></iframe></div>';
+            }*/
           ?>
-            <div id="player"></div>
-            <script>
-              // 2. This code loads the IFrame Player API code asynchronously.
-              var tag = document.createElement('script');
-
-              tag.src = "https://www.youtube.com/iframe_api";
-              var firstScriptTag = document.getElementsByTagName('script')[0];
-              firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-              $(document).ready(function(){
-                var player;
-                function onYouTubeIframeAPIReady() {
-                  player = new YT.Player('player', {
-                    height: '390',
-                    width: '640',
-                    videoId: 'M7lc1UVf-VE',
-                    playerVars: {
-                      'playsinline': 1
-                    },
-                    events: {
-                      'onReady': onPlayerReady,
-                      'onStateChange': onPlayerStateChange
-                    }
-                  });
-                }
-                console.log(YT);
-              });
-              
-
-              
-            </script>
+            <div id="player"></div>            
           </div>
         </div>
       <?php }

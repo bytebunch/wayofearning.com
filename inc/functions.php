@@ -23,18 +23,24 @@ $plans = array(
 		'name' => 'Silver',
 		'desc' => 'You will get 3% of your total deposit price.',
 		'plan_percent' => 3,
+		'videos' => 5,
+		'video_award' => 25,
 	),
 	'2' => array(
 		'price' => 200,
 		'name' => 'Gold',
 		'desc' => 'You will get 13% of your total deposit price.',
 		'plan_percent' => 13,
+		'videos' => 10,
+		'video_award' => 50,
 	),
 	'3' => array(
 		'price' => 300,
 		'name' => 'Diamond',
 		'desc' => 'You will get 23% of your total deposit price.',
 		'plan_percent' => 23,
+		'videos' => 15,
+		'video_award' => 75,
 	),
 );
 
