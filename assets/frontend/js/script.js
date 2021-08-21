@@ -3,6 +3,7 @@ var seconds = 0;
 var current_video_play_time = 0;
 var player;
 var is_new_video = false;
+var watched_vidoes = 0;
 
 // 2. This code loads the IFrame Player API code asynchronously.
 var tag = document.createElement('script');
@@ -13,7 +14,6 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 function startTimer () {
   seconds++;
-  console.log(seconds);
 }
 
 function start_timer() {
@@ -24,18 +24,22 @@ function stop_timer() {
 }
 
 function onYouTubeIframeAPIReady() {
-  player = new YT.Player('player', {
-    height: '390',
-    width: '640',
-    videoId: 'o9aaoiyJlcM',
-    playerVars: {
-      'playsinline': 1
-    },
-    events: {
-      //'onReady': onPlayerReady,
-      'onStateChange': onPlayerStateChange
-    }
-  });
+  if(typeof plan_videos != undefined){
+    player = new YT.Player('player', {
+      height: '390',
+      width: '640',
+      //videoId: 'o9aaoiyJlcM',
+      videoId: plan_videos[0],
+      playerVars: {
+        'playsinline': 1
+      },
+      events: {
+        //'onReady': onPlayerReady,
+        'onStateChange': onPlayerStateChange
+      }
+    });
+  }
+  
 }
 
 function onPlayerReady(event) {
@@ -59,17 +63,33 @@ function onPlayerStateChange(event) {
     }
     
   }
-        
+  console.log(ajax_url);
   if (event.data == 0) {
     watched_time = seconds;
     stop_timer();
     seconds = 0;
-    is_new_video = true;
     if(watched_time+5 >= current_video_play_time){
-      if(confirm("Play next video")){
-        player.loadVideoById('pBSIUuwpijA');
+      if(watched_vidoes+1 == plan_videos.length){
+        
+        $.ajax({
+          type: "POST",
+          url: ajax_url,
+          data: {watched: 'all'},
+          success: function (response) {
+            
+          }
+        });
+        alert("Hurray, you earned Rs. "+videos_price);
+
+
+      }else{
+        if(confirm("Play next video")){
+          watched_vidoes += 1;
+          player.loadVideoById(plan_videos[watched_vidoes]);
+        }
       }
     }else{
+      is_new_video = true;
       alert("You didn't wathed the full video, pelase watch full video to earn your money.");
     }
   }

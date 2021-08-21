@@ -2,3 +2,7 @@
 [17-Aug-2021 18:10:29 UTC] PHP Notice:  Array to string conversion in D:\www\htdocs\wayofearning.com\dashboard.php on line 55
 [18-Aug-2021 13:17:32 UTC] PHP Notice:  Undefined index: referral_code in D:\www\htdocs\wayofearning.com\dashboard.php on line 69
 [18-Aug-2021 13:35:36 UTC] PHP Notice:  Undefined index: referral_code in D:\www\htdocs\wayofearning.com\signup.php on line 54
+[21-Aug-2021 17:50:03 UTC] PHP Notice:  Undefined offset: 1 in D:\www\htdocs\wayofearning.com\dashboard.php on line 200
+[21-Aug-2021 17:50:03 UTC] PHP Notice:  Undefined offset: 1 in D:\www\htdocs\wayofearning.com\dashboard.php on line 200
+[21-Aug-2021 17:50:03 UTC] PHP Notice:  Undefined offset: 1 in D:\www\htdocs\wayofearning.com\dashboard.php on line 200
+[21-Aug-2021 17:50:35 UTC] PHP Notice:  Undefined offset: 2 in D:\www\htdocs\wayofearning.com\dashboard.php on line 200
