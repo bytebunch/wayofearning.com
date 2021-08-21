@@ -222,7 +222,7 @@ include_once("header.php");
               'aCcaK8V0ipw',
               'eVr587NQc8A',
             ];
-            $videos = array('UT5F9AXjwhg', 'UT5F9AXjwhg');
+            //$videos = array('UT5F9AXjwhg', 'UT5F9AXjwhg');
             $plan_videos = array();
             for($i = 1; $i <= $plans[$_SESSION['user']['plan']]['videos']; $i++){
               $plan_videos[] = $videos[rand(0, count($videos)-1)];
